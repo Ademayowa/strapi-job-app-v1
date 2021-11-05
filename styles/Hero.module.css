@@ -1,7 +1,7 @@
 .hero {
   background-color: var(--bg-color);
-  padding-left: 10px !important;
-  padding-right: 10px !important;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .title {
