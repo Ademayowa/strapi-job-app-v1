@@ -19,7 +19,7 @@ body {
   border-radius: 5px !important;
 }
 .btn-danger {
-  background-color: var(--red-color) !important;
+  background-color: var(--btn-color) !important;
   border: none !important;
 }
 
