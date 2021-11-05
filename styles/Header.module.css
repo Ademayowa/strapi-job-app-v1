@@ -1,0 +1,44 @@
+.container {
+  padding: 10px;
+}
+
+.link > a {
+  padding-top: 10px;
+  font-weight: bold;
+  color: var(--gray-color) !important;
+}
+
+.danger {
+  padding: 10px 30px;
+  word-spacing: 2px;
+  background-color: var(--btn-color);
+  border: none;
+}
+
+.danger:hover {
+  opacity: 0.9;
+  background-color: var(--btn-color);
+}
+
+.home a {
+  color: var(--btn-color);
+  font-weight: bold;
+}
+
+@media (min-width: 992px) {
+  .danger {
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .link > a {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .danger {
+    margin-top: 10px;
+  }
+}

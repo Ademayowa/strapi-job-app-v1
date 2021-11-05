@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400&display=swap');
+
+:root {
+  --white-color: #fff;
+  --red-color: #fc5e53;
+  --bg-color: #fbf2eb;
+  --blue-color: #2b323c;
+  --btn-color: #f1835e;
+  --gray-color: #b5b7bf;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 5px !important;
+}
+.btn-danger {
+  background-color: var(--red-color) !important;
+  border: none !important;
+}
+
+.text-danger {
+  color: var(--red-color) !important;
+}
+
+.text-primary {
+  color: var(--main-color) !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.8;
+}
+
+ul {
+  list-style: none;
+}
+
+.form-control {
+  height: 54px !important;
+}
+
+.card {
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important;
+}
