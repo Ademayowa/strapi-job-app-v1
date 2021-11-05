@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&family=Quicksand:wght@300&display=swap');
 
 :root {
   --white-color: #fff;
@@ -7,6 +7,7 @@
   --blue-color: #2b323c;
   --btn-color: #f1835e;
   --gray-color: #b5b7bf;
+  --font-two: 'Quicksand', sans-serif;
 }
 
 body {
@@ -23,19 +24,25 @@ body {
 }
 
 .text-danger {
-  color: var(--red-color) !important;
+  color: var(--btn-color) !important;
 }
 
 .text-primary {
   color: var(--main-color) !important;
 }
 
+.form-control {
+  font-family: var(--font-two);
+}
+
 a {
   text-decoration: none;
+  font-family: var(--font-two);
 }
 
 p {
   line-height: 1.8;
+  font-family: var(--font-two);
 }
 
 ul {

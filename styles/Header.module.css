@@ -3,16 +3,17 @@
 }
 
 .link > a {
-  padding-top: 10px;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
   color: var(--gray-color) !important;
 }
 
 .danger {
   padding: 10px 30px;
-  word-spacing: 2px;
   background-color: var(--btn-color);
   border: none;
+  font-family: var(--font-two);
 }
 
 .danger:hover {

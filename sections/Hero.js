@@ -7,25 +7,31 @@ import {
   FormControl,
   InputGroup,
   Text,
+  Button,
 } from 'react-bootstrap';
 import Image from 'next/image';
 import { BiSearch } from 'react-icons/bi';
 import styles from '@/styles/Hero.module.css';
 
-export default function Hero({ title, lead }) {
+export default function Hero() {
   return (
     <section className={styles.hero}>
       <Container className='px-4'>
         <Row>
           <Col lg={5} className={styles.info}>
-            <h2 className={styles.title}>{title}</h2>
-            <p className={styles.lead}>{lead}</p>
+            <h1 className={styles.title}>
+              The easiest way to get your new job.
+            </h1>
+            <p className={styles.lead}>
+              Searching and finding your dream job is now easier than ever. Just
+              browse a job and apply with ease.
+            </p>
           </Col>
         </Row>
 
         <Row>
-          <Col lg={5} className='ps-0'>
-            <InputGroup className='mb-3 bg-white p-4 shadow-lg rounded-2'>
+          <Col lg={5} className='ps-lg-0'>
+            <InputGroup className='mb-5 mt-2 bg-white p-4 shadow-sm rounded-2'>
               <InputGroup.Text className={styles.text}>
                 <BiSearch className={styles.search} />
               </InputGroup.Text>
@@ -33,13 +39,9 @@ export default function Hero({ title, lead }) {
                 className={styles.control}
                 placeholder='Search by title or location'
               />
-              <button
-                className='btn btn-danger ms-3 px-3 '
-                type='button'
-                id='button-addon1'
-              >
+              <Button variant='danger' className='ms-2 px-3'>
                 <BiSearch className={styles.color} />
-              </button>
+              </Button>
             </InputGroup>
           </Col>
         </Row>
@@ -47,7 +49,6 @@ export default function Hero({ title, lead }) {
 
       <div className={styles.image}>
         <Image
-          className='d-none d-lg-block'
           src={'/images/hero.png'}
           width={600}
           height={600}
@@ -57,8 +58,3 @@ export default function Hero({ title, lead }) {
     </section>
   );
 }
-
-Hero.defaultProps = {
-  title: 'The easiset way to get your new job.',
-  lead: 'We get you the latest job on this platform.',
-};

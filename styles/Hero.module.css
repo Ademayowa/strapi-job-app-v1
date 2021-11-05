@@ -1,30 +1,20 @@
 .hero {
   background-color: var(--bg-color);
-  height: 100vh;
-}
-
-.hero h2 {
-  color: var(--blue-color);
-}
-
-.info {
-  padding-left: 0 !important;
-  padding-top: 130px;
 }
 
 .title {
-  color: var(--white-color);
-  font-size: 40px;
-  font-weight: 600;
+  color: var(--blue-color);
+  font-size: 48px;
+  font-weight: 700;
   text-transform: capitalize;
-  line-height: 1.4;
 }
 
 .lead {
-  color: var(--white-color);
+  color: var(--blue-color);
   font-size: 18px;
   margin-top: 20px;
-  font-weight: 300;
+  font-weight: 400;
+  line-height: 28px;
 }
 
 .control,
@@ -34,7 +24,7 @@
 }
 
 .search {
-  color: var(--red-color);
+  color: var(--btn-color);
   font-size: 26px;
 }
 
@@ -42,12 +32,50 @@
   font-size: 26px;
 }
 
+@media (max-width: 992px) {
+  .info {
+    padding-top: 50px;
+  }
+
+  .image {
+    display: none !important;
+  }
+}
+
 @media (min-width: 992px) {
+  .hero {
+    padding-bottom: 100px;
+  }
+
   .image {
     position: absolute;
     top: 0;
     right: 2%;
     z-index: 100;
     margin-top: 50px !important;
+  }
+
+  .info {
+    padding-left: 0 !important;
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 24px;
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  .lead {
+    line-height: 28px;
+    text-align: center;
   }
 }
