@@ -5,15 +5,6 @@
   padding-right: 10px !important;
 }
 
-.featured h2,
-.featured h3 {
-  font-size: 38px;
-  font-weight: bold;
-  text-align: left;
-  color: var(--blue-color);
-  text-transform: capitalize;
-}
-
 .image {
   position: absolute;
   top: -15%;
@@ -26,6 +17,10 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
+}
+
+.title svg {
+  font-size: 1.2rem;
 }
 
 .text {

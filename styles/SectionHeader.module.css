@@ -1,0 +1,12 @@
+.secheader h2,
+.secheader h3 {
+  font-size: 38px;
+  font-weight: bold;
+  text-align: left;
+  color: var(--blue-color);
+  text-transform: capitalize;
+}
+/* 
+.secheader h2 {
+  padding-top: 100px;
+} */
