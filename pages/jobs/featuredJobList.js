@@ -1,5 +1,6 @@
 import { Card, Body, Title, Text, Button, Col } from 'react-bootstrap';
 import { API_URL } from '@/config/index';
+import Link from 'next/link';
 import Image from 'next/image';
 import { BsDot } from 'react-icons/bs';
 import styles from '@/styles/Featured.module.css';
@@ -26,9 +27,9 @@ export default function FeaturedJobListPage({ job }) {
           <Card.Text className={styles.text}>{role}</Card.Text>
           <h5 className='fs-6 text-secondary'>{company}</h5>
           <h5 className='fs-6 text-secondary'>{location}</h5>
-          <Button variant='danger' className={styles.danger}>
-            Apply
-          </Button>
+          <Link href={`/jobs/${job.slug}`} className={styles.danger}>
+            <a>Apply</a>
+          </Link>
         </Card.Body>
       </Card>
     </Col>
