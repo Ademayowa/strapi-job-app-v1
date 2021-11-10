@@ -13,7 +13,7 @@ export default function Home({ jobs }) {
       <div className={styles.home}>
         <Hero />
         <Container>
-          <Col lg={12} className='mt-5'>
+          <Col lg={12}>
             <SectionHeader
               title='Featured jobs'
               subtitle='that are in demand.'

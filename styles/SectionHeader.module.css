@@ -6,7 +6,34 @@
   color: var(--blue-color);
   text-transform: capitalize;
 }
-/* 
-.secheader h2 {
-  padding-top: 100px;
-} */
+
+@media (min-width: 768px) {
+  .secheader h2 {
+    padding-top: 100px;
+  }
+
+  .secheader h3 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .secheader h2 {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .secheader h3 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .secheader h2,
+  .secheader h3 {
+    font-size: 24px;
+    line-height: 0.8;
+  }
+}
