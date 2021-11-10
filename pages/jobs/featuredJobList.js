@@ -27,8 +27,8 @@ export default function FeaturedJobListPage({ job }) {
           <Card.Text className={styles.text}>{role}</Card.Text>
           <h5 className='fs-6 text-secondary'>{company}</h5>
           <h5 className='fs-6 text-secondary'>{location}</h5>
-          <Link href={`/jobs/${job.slug}`} className={styles.danger}>
-            <a>Apply</a>
+          <Link href={`/jobs/${job.slug}`}>
+            <a className='btn btn-danger'>Apply</a>
           </Link>
         </Card.Body>
       </Card>

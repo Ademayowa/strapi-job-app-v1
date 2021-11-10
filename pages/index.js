@@ -9,22 +9,27 @@ import styles from '@/styles/Home.module.css';
 
 export default function Home({ jobs }) {
   return (
-    <div className={styles.home}>
-      <Hero />
-      <Container>
-        <Col lg={12} className='mt-5'>
-          <SectionHeader title='Featured jobs' subtitle='that are in demand.' />
-        </Col>
+    <Layout title='FindGigs | Home'>
+      <div className={styles.home}>
+        <Hero />
+        <Container>
+          <Col lg={12} className='mt-5'>
+            <SectionHeader
+              title='Featured jobs'
+              subtitle='that are in demand.'
+            />
+          </Col>
 
-        <Row>
-          {jobs.map((job) => (
-            <FeaturedJobList key={job.id} job={job} />
-          ))}
-        </Row>
+          <Row>
+            {jobs.map((job) => (
+              <FeaturedJobList key={job.id} job={job} />
+            ))}
+          </Row>
 
-        <Info />
-      </Container>
-    </div>
+          <Info />
+        </Container>
+      </div>
+    </Layout>
   );
 }
 
