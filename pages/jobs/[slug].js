@@ -1,15 +1,26 @@
+import { Container, Row, Col } from 'react-bootstrap';
 import { API_URL } from '@/config/index';
+import Layout from '@/components/Layout';
+import BreadCrumb from './breadCrumb';
 
 export default function SingleJobPage({ jb }) {
   const { role } = jb;
 
   return (
-    <div>
-      <h2>Single Job Page</h2>
-      <div className='company ms-5'>
+    <Layout title={jb.role}>
+      <div className='company'>
+        {/* Breadcrumb */}
+        <BreadCrumb />
+        {/* Job info => in a flex form */}
+        {/* Job title */}
+        {/* Job type */}
+        {/* ====== */}
+        {/* Overview  */}
+        {/* qualifications reqiured  */}
+        {/* company */}
         <h3>{role}</h3>
       </div>
-    </div>
+    </Layout>
   );
 }
 
