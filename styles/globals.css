@@ -7,6 +7,7 @@
   --blue-color: #2b323c;
   --btn-color: #f1835e;
   --gray-color: #b5b7bf;
+  --font-one: 'Nunito Sans', sans-serif;
   --font-two: 'Quicksand', sans-serif;
 }
 
@@ -56,4 +57,6 @@ ul {
 
 .card {
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important;
+  font-family: var(--font-two);
+  margin-bottom: 15px;
 }

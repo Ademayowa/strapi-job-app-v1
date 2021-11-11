@@ -13,7 +13,6 @@ export default function FeaturedJobListPage({ job }) {
       <Card className='px-2 py-2 mt-5'>
         <div className={styles.image}>
           <Image
-            className='d-none d-lg-block'
             src={'/images/logo.png'}
             width={60}
             height={60}
@@ -27,6 +26,7 @@ export default function FeaturedJobListPage({ job }) {
           <Card.Text className={styles.text}>{role}</Card.Text>
           <h5 className='fs-6 text-secondary'>{company}</h5>
           <h5 className='fs-6 text-secondary'>{location}</h5>
+
           <Link href={`/jobs/${job.slug}`}>
             <a className='btn btn-danger'>Apply</a>
           </Link>

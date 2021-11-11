@@ -59,6 +59,18 @@
       "time": "1:00 PM EST",
       "description": "We are looking for a back-end Web Developer who is motivated to combine the art of design with the art of programming. Responsibilities will include translation of the UI/UX design wireframes to actual code that will produce visual elements of the application. You will work with the UI/UX designer and bridge the gap between graphical design and technical implementation, taking an active role on both sides and defining how the application looks as well as how it work",
       "image": "/images/sample/event5.jpg"
+    },
+    {
+      "id": "6",
+      "role": "Accountant",
+      "slug": "accountant",
+      "location": "Wales, UK",
+      "salary": "80k - 150k",
+      "type": "Full Time",
+      "date": "April 2, 2021",
+      "time": "1:00 PM",
+      "description": "We are looking for a back-end Web Developer who is motivated to combine the art of design with the art of programming. Responsibilities will include translation of the UI/UX design wireframes to actual code that will produce visual elements of the application. You will work with the UI/UX designer and bridge the gap between graphical design and technical implementation, taking an active role on both sides and defining how the application looks as well as how it work",
+      "image": "/images/sample/event5.jpg"
     }
   ]
 }
