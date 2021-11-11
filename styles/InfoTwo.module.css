@@ -1,0 +1,19 @@
+.bigShape {
+  clip-path: polygon(0% 0%, 75% 0%, 88% 58%, 75% 100%, 0% 100%);
+  margin-top: 50px !important;
+  width: 60%;
+  height: 80%;
+  background-color: var(--bg-color);
+  position: absolute;
+  top: 0%;
+}
+
+.infoTwo {
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .bigShape {
+    display: none !important;
+  }
+}

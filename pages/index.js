@@ -6,6 +6,7 @@ import Info from '@/sections/info';
 import FeaturedJobList from './jobs/featuredJobList';
 import SectionHeader from '@/sections/sectionHeader';
 import styles from '@/styles/Home.module.css';
+import InfoTwo from '@/sections/infoTwo';
 
 export default function Home({ jobs }) {
   return (
@@ -25,8 +26,10 @@ export default function Home({ jobs }) {
               <FeaturedJobList key={job.id} job={job} />
             ))}
           </Row>
+        </Container>
 
-          <Info />
+        <Container fluid className='ps-0'>
+          <InfoTwo />
         </Container>
       </div>
     </Layout>
