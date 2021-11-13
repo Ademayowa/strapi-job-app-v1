@@ -1,11 +1,12 @@
 import { Container, Col } from 'react-bootstrap';
+import { BiChevronsRight } from 'react-icons/bs';
 import { API_URL } from '@/config/index';
 import Layout from '@/components/Layout';
 import BreadCrumb from './breadCrumb';
 import JobInfo from './jobInfo';
 
 export default function SingleJobPage({ jb }) {
-  const { role, type, description } = jb;
+  const { role, type, description, skills } = jb;
 
   return (
     <Layout title={jb.role}>
@@ -20,6 +21,9 @@ export default function SingleJobPage({ jb }) {
         </Col>
 
         <h5 className='mt-5 fw-bold'>Key Qualifications</h5>
+        {skills.map((sk) => (
+          <div>{sk}</div>
+        ))}
       </Container>
       {/* Job title */}
       {/* Job type */}
