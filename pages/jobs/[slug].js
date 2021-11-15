@@ -6,7 +6,7 @@ import BreadCrumb from './breadCrumb';
 import JobInfo from './jobInfo';
 
 export default function SingleJobPage({ jb }) {
-  const { role, type, description, skills } = jb;
+  const { role, type, description, skills, company } = jb;
 
   return (
     <Layout title={jb.role}>
@@ -24,12 +24,13 @@ export default function SingleJobPage({ jb }) {
         {skills.map((sk) => (
           <div>{sk}</div>
         ))}
+
+        <h5 className='mt-5 fw-bold'>Company</h5>
+        <Col lg={7}>
+          <p>{company}</p>
+        </Col>
       </Container>
-      {/* Job title */}
-      {/* Job type */}
-      {/* ====== */}
-      {/* Overview  */}
-      {/* qualifications reqiured  */}
+
       {/* company */}
     </Layout>
   );

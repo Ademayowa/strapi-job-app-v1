@@ -9,7 +9,16 @@
       "type": "Full time, Onsite",
       "date": "June 09, 2021",
       "time": "10:00 PM",
-      "skills": ["CSS", "JavaScript", "Node.js"],
+      "skills": [
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Git",
+        "Figma",
+        "REST",
+        "Material UI"
+      ],
+      "company": "Relode is an online recruiting marketplace that is disrupting the traditional staffing industry. It utilizes a crowd-source network comprised of experienced recruiters, HR professionals and industry professionals who refer and recruit top talent quickly and effieciently through our prioproetry technology.",
       "description": "We are looking for a Front-End Web Developer who is motivated to combine the art of design with the art of programming. Responsibilities will include translation of the UI/UX design wireframes to actual code that will produce visual elements of the application. You will work with the UI/UX designer and bridge the gap between graphical design and technical implementation, taking an active role on both sides and defining how the application looks as well as how it work",
       "image": "/images/sample/event1.jpg"
     },

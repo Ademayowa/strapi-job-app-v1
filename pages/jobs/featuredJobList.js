@@ -24,7 +24,6 @@ export default function FeaturedJobListPage({ job }) {
             {time} <BsDot /> {type}
           </Card.Title>
           <Card.Text className={styles.text}>{role}</Card.Text>
-          <h5 className='fs-6 text-secondary'>{company}</h5>
           <h5 className='fs-6 text-secondary'>{location}</h5>
 
           <Link href={`/jobs/${job.slug}`}>
