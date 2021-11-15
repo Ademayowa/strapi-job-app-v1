@@ -1,0 +1,28 @@
+.right {
+  position: fixed;
+  top: 40%;
+  right: 6%;
+}
+
+.singleJob {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Hide button on mobile & Tablet */
+@media (min-width: 992px) {
+  .rightMobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .right {
+    display: none !important;
+  }
+
+  .rightMobile {
+    position: sticky !important;
+    bottom: 0% !important;
+  }
+}

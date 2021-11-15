@@ -2,13 +2,13 @@ import Link from 'next/link';
 
 export default function JobInfoPage() {
   return (
-    <div className='col-lg-4 d-flex justify-content-between mt-4 mb-4 fw-bold'>
+    <div className='col-lg-4 col-md-6 d-flex justify-content-between mt-4 mb-4 fw-bold'>
       <Link href='#'>
         <a>overview</a>
       </Link>
 
       <Link href='#'>
-        <a>key qualifications</a>
+        <a>qualifications</a>
       </Link>
 
       <Link href='#'>
