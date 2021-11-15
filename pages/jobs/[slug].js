@@ -25,29 +25,29 @@ export default function SingleJobPage({ jb }) {
         <Row>
           <JobInfo />
 
-          <h3 className='fs-1 fw-bold mt-5 mb-3'>{role}</h3>
+          <h3 className='fs-1 fw-bold'>{role}</h3>
           <h4>{type}</h4>
-          <h5 className='mt-5 fw-bold'>Overview</h5>
+          <h5 className='mt-lg-4 fw-bold'>Overview</h5>
           <Col lg={7}>
             <p>{description}</p>
           </Col>
 
-          <h5 className='mt-5 fw-bold'>Key Qualifications</h5>
+          <h5 className='mt-lg-4 fw-bold'>Key Qualifications</h5>
           {skills.map((sk) => (
             <div>{sk}</div>
           ))}
 
-          <h5 className='mt-5 fw-bold'>Company</h5>
+          <h5 className='mt-lg-4 fw-bold'>Company</h5>
           <Col lg={7}>
             <p>{company}</p>
           </Col>
 
           {/* Show on Desktop screens Only */}
-          <Col className={styles.right} lg={4} xl={3}>
+          <Col className={styles.right} lg={4} xl={4}>
             <Card>
               <Card.Header>
-                rewards up to <br />
-                <span className='fw-bold fs-4'>$2,087.50</span>
+                salary is around <br />
+                <span className='fw-bold fs-4'>$100k - $200k</span>
               </Card.Header>
               <Card.Body>
                 <Card.Text>
@@ -59,13 +59,13 @@ export default function SingleJobPage({ jb }) {
           </Col>
 
           {/* Show on Tablet & mobile Only */}
-          <div className={styles.rightMobile}>
+          <Col className={styles.rightMobile}>
             <div className='d-grid gap-2'>
               <Button variant='danger' size='lg'>
                 apply for this position
               </Button>
             </div>
-          </div>
+          </Col>
         </Row>
       </Container>
     </Layout>
