@@ -9,6 +9,23 @@
   margin-bottom: 20px;
 }
 
+@media (max-width: 576px) {
+  .singleJob {
+    padding: 0 20px;
+  }
+  .singleJob h3 {
+    font-size: 24px !important;
+  }
+
+  .singleJob h4 {
+    font-size: 20px !important;
+  }
+  .singleJob h5 {
+    font-size: 18px !important;
+    margin-top: 20px !important;
+  }
+}
+
 /* Hide button on mobile & Tablet */
 @media (min-width: 992px) {
   .rightMobile {

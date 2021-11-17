@@ -32,12 +32,12 @@ export default function SingleJobPage({ jb }) {
             <p>{description}</p>
           </Col>
 
-          <h5 className='mt-lg-4 fw-bold'>Key Qualifications</h5>
+          <h5 className='mt-lg-4 fw-bold'>Skills</h5>
           {skills.map((sk) => (
             <div>{sk}</div>
           ))}
 
-          <h5 className='mt-lg-4 fw-bold'>Company</h5>
+          <h5 className='mt-4 fw-bold'>Company</h5>
           <Col lg={7}>
             <p>{company}</p>
           </Col>
