@@ -47,7 +47,7 @@ export default function SingleJobPage({ jb }) {
             <Card>
               <Card.Header>
                 salary is around <br />
-                <span className='fw-bold fs-4'>$100k - $200k</span>
+                <span className='fw-bold fs-4'>$150k - $300k</span>
               </Card.Header>
               <Card.Body>
                 <Card.Text>
