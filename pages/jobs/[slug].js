@@ -43,7 +43,7 @@ export default function SingleJobPage({ jb }) {
           </Col>
 
           {/* Show on Desktop screens Only */}
-          <Col className={styles.right} lg={4} xl={4}>
+          <Col className={styles.right} lg={4}>
             <Card>
               <Card.Header>
                 salary is around <br />
