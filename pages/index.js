@@ -37,7 +37,7 @@ export default function Home({ jobs }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/jobs`);
+  const res = await fetch(`${API_URL}/jobs?_sort=date:ASC&_limit=3`);
   const jobs = await res.json();
 
   return {

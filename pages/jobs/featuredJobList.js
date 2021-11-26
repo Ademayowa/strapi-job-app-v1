@@ -12,7 +12,12 @@ export default function FeaturedJobListPage({ job }) {
     <Col md={6} lg={4}>
       <Card className='px-2 py-2 mt-5'>
         <div className={styles.image}>
-          <Image src={image.url} width={50} height={50} objectFit={'contain'} />
+          <Image
+            src={image.url ? image.url : '/images/default.png'}
+            width={50}
+            height={50}
+            objectFit={'contain'}
+          />
         </div>
         <Card.Body>
           <Card.Title className={styles.title}>

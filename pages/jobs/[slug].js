@@ -73,7 +73,7 @@ export default function SingleJobPage({ jb }) {
 }
 
 export async function getServerSideProps({ query: { slug } }) {
-  const res = await fetch(`${API_URL}/jobs/${slug}`);
+  const res = await fetch(`${API_URL}/api/jobs/${slug}`);
   const jobs = await res.json();
 
   return {
