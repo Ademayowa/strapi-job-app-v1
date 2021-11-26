@@ -5,8 +5,8 @@ import Hero from '@/sections/hero';
 import Info from '@/sections/info';
 import FeaturedJobList from './jobs/featuredJobList';
 import SectionHeader from '@/sections/sectionHeader';
-import styles from '@/styles/Home.module.css';
 import InfoTwo from '@/sections/infoTwo';
+import styles from '@/styles/Home.module.css';
 
 export default function Home({ jobs }) {
   return (
@@ -37,7 +37,7 @@ export default function Home({ jobs }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/jobs`);
+  const res = await fetch(`${API_URL}/jobs`);
   const jobs = await res.json();
 
   return {

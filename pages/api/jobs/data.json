@@ -2,7 +2,7 @@
   "jobs": [
     {
       "id": "1",
-      "role": "Front end developer",
+      "role": "Frontend developer",
       "slug": "front-end-developer",
       "location": "Berlin, Germany",
       "salary": "50k - 80k",
