@@ -1,4 +1,4 @@
-import { Card, Body, Title, Text, Button, Col } from 'react-bootstrap';
+import { Card, Body, Title, Text, Col } from 'react-bootstrap';
 import { API_URL } from '@/config/index';
 import Link from 'next/link';
 import Image from 'next/image';

@@ -1,5 +1,6 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { API_URL } from '@/config/index';
+import Link from 'next/link';
 import Layout from '@/components/Layout';
 import Hero from '@/sections/hero';
 import Info from '@/sections/info';
@@ -26,6 +27,12 @@ export default function Home({ jobs }) {
               <FeaturedJobList key={job.id} job={job} />
             ))}
           </Row>
+
+          <div className='text-center mt-4 mb-4'>
+            <Link href='/jobs'>
+              <a className='btn btn-danger'>View all</a>
+            </Link>
+          </div>
         </Container>
 
         <Container fluid className='ps-0'>
