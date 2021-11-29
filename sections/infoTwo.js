@@ -7,7 +7,7 @@ import styles from '@/styles/InfoTwo.module.css';
 export default function infoTwo() {
   return (
     <section className={styles.infoTwo}>
-      <Container fluid='lg' className='mb-4'>
+      <Container fluid='lg' className='mb-5'>
         <Row>
           <Col lg={7}></Col>
 
@@ -20,9 +20,11 @@ export default function infoTwo() {
                 provident nulla aperiam, numquam delectus laborum officiis unde,
                 quod fugiat laboriosam ut.
               </p>
-              <Link href='/account/register'>
-                <a className='btn btn-danger'>Sign up</a>
-              </Link>
+              <div className={styles.center}>
+                <Link href='/account/register'>
+                  <a className='btn btn-danger'>Sign up</a>
+                </Link>
+              </div>
             </div>
           </Col>
         </Row>

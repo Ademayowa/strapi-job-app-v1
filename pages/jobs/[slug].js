@@ -26,7 +26,7 @@ export default function SingleJobPage({ jb }) {
           <JobInfo />
 
           <h3 className='fs-1 fw-bold'>{role}</h3>
-          <h4>{type}</h4>
+          <h4 className='mt-3'>{type}</h4>
           <h5 className='mt-lg-4 fw-bold'>Overview</h5>
           <Col lg={7}>
             <p>{description}</p>
