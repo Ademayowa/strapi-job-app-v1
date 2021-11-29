@@ -4,7 +4,7 @@ import styles from '@/styles/Header.module.css';
 
 export default function Header() {
   return (
-    <Navbar collapseOnSelect expand='md'>
+    <Navbar collapseOnSelect expand='md' className='shadow-sm'>
       <Container className={styles.container}>
         <Navbar.Brand className={styles.home}>
           <Link href='/'>

@@ -1,7 +1,9 @@
+import Layout from '@/components/Layout';
+
 export default function AllJobs() {
   return (
-    <div>
+    <Layout title='All Jobs'>
       <h2>All Jobs</h2>
-    </div>
+    </Layout>
   );
 }
