@@ -16,7 +16,7 @@ import JobInfo from './jobInfo';
 import styles from '@/styles/SingleJobPage.module.css';
 
 export default function SingleJobPage({ jb }) {
-  const { role, type, description, skills, company } = jb;
+  const { role, type, description, skills, company, salary } = jb;
 
   return (
     <Layout title={jb.role}>
@@ -47,7 +47,7 @@ export default function SingleJobPage({ jb }) {
             <Card>
               <Card.Header>
                 salary is around <br />
-                <span className='fw-bold fs-4'>$150k - $300k</span>
+                <span className='fw-bold fs-4'>${salary}</span>
               </Card.Header>
               <Card.Body>
                 <Card.Text>
