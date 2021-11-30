@@ -1,10 +1,11 @@
 import { Container, Row } from 'react-bootstrap';
-import { API_URL } from '@/config/index';
+import { API_URL, PER_PAGE } from '@/config/index';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
 import FeaturedJobList from './featuredJobList';
+import Pagination from '@/components/Pagination';
 
-export default function AllJobs({ jobs }) {
+export default function AllJobs({ jobs, page, total }) {
   return (
     <Layout title='All Jobs'>
       <Container className='mt-5 mb-5'>
@@ -17,16 +18,28 @@ export default function AllJobs({ jobs }) {
             <FeaturedJobList key={job.id} job={job} />
           ))}
         </Row>
+
+        <Pagination page={page} total={total} />
       </Container>
     </Layout>
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/jobs`);
-  const jobs = await res.json();
+export async function getServerSideProps({ query: { page = 1 } }) {
+  // Calculate start page
+  const start = +page === 1 ? 0 : (+page - 1) * PER_PAGE;
+
+  // Fetch total job
+  const totalRes = await fetch(`${API_URL}/jobs/count`);
+  const total = await totalRes.json();
+
+  // Fetch jobs
+  const jobRes = await fetch(
+    `${API_URL}/jobs?_sort=date:ASC&_limit=${PER_PAGE}&_start=${start}`
+  );
+  const jobs = await jobRes.json();
 
   return {
-    props: { jobs },
+    props: { jobs, page: +page, total },
   };
 }
