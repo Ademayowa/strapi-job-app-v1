@@ -12,9 +12,17 @@ export default function SearchPage({ jobs }) {
   return (
     <Layout title='Job Search Results'>
       <Container>
-        <h2 className='text-center mt-4 fs-4 fw-bold'>
-          Search Results for {router.query.term}
-        </h2>
+        <Link href='/'>
+          <a className='btn btn-danger mt-4'>Back</a>
+        </Link>
+
+        <div className='text-center mt-4 fs-4 fw-bold'>
+          {jobs.length === 0 ? (
+            <h2>No jobs found</h2>
+          ) : (
+            <h2>Search Results for {router.query.term}</h2>
+          )}
+        </div>
 
         <Row>
           {jobs.map((job) => (

@@ -33,9 +33,11 @@ export default function SingleJobPage({ jb }) {
           </Col>
 
           <h5 className='mt-lg-4 fw-bold'>Skills</h5>
-          {skills.map((sk) => (
-            <div key={sk.id}>{sk}</div>
-          ))}
+          <Col lg={7}>
+            {skills.map((sk) => (
+              <p key={sk.id}>{sk}</p>
+            ))}
+          </Col>
 
           <h5 className='mt-4 fw-bold'>Company</h5>
           <Col lg={7}>
