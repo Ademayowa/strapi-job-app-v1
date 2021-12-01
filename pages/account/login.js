@@ -44,7 +44,7 @@ export default function LoginPage() {
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                     type='password'
-                    placeholder='Password'
+                    placeholder='Enter Password'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
