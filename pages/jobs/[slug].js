@@ -33,6 +33,7 @@ export default function SingleJobPage({ jb }) {
           </Col>
 
           <h5 className='mt-lg-4 fw-bold'>Skills</h5>
+          {/* Fix later: unique key causing errorrs here */}
           <Col lg={7}>
             {skills.map((sk) => (
               <p key={sk.id}>{sk}</p>
