@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Button, Group, Label, Control, Form } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
 import FormContainer from '@/components/FormContainer';
@@ -12,6 +14,12 @@ export default function RegisterPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (password !== passwordConfirm) {
+      toast.error('Passwords do not match');
+      return;
+    }
+
     console.log({ username, email, password, passwordConfirm });
   };
 
@@ -20,6 +28,7 @@ export default function RegisterPage() {
       <FormContainer>
         <div className='mx-auto bg-white shadow-sm p-4 rounded'>
           <h4 className='text-center mt-4 mb-4 fw-bold'>Register</h4>
+          <ToastContainer />
 
           <Form onSubmit={handleSubmit}>
             <Form.Group className='mb-3 fw-bold' controlId='username'>
