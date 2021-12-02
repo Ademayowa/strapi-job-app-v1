@@ -30,14 +30,13 @@ export default function Header() {
               {user ? (
                 // If logged in
                 <>
-                  <Link href='#'>
+                  <Link href='/jobs/add'>
                     <a>Post Job</a>
                   </Link>
-                  <div className={styles.dg}>
-                    <Link href='#' onClick={() => logout()}>
-                      <a>Logout</a>
-                    </Link>
-                  </div>
+
+                  <Link href='#' onClick={() => logout()}>
+                    <a>Logout</a>
+                  </Link>
                 </>
               ) : (
                 // if not logged in

@@ -3,14 +3,7 @@
 }
 
 .dg {
-  padding: 10px 30px;
-  background-color: var(--btn-color);
-  border-radius: 5px;
   font-family: var(--font-two);
-}
-
-.dg a {
-  color: var(--white-color) !important;
 }
 
 .link > a {
