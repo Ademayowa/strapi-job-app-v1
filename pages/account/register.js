@@ -1,16 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Button, Group, Label, Control, Form } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
 import FormContainer from '@/components/FormContainer';
+import AuthContext from '@/context/AuthContext';
 
 export default function RegisterPage() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+
+  const { error, register } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +23,7 @@ export default function RegisterPage() {
       return;
     }
 
-    console.log({ username, email, password, passwordConfirm });
+    register({ username, email, password, passwordConfirm });
   };
 
   return (

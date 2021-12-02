@@ -1,8 +1,12 @@
+import { useContext } from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import Link from 'next/link';
+import AuthContext from '@/context/AuthContext';
 import styles from '@/styles/Header.module.css';
 
 export default function Header() {
+  const { logout, user } = useContext(AuthContext);
+
   return (
     <Navbar collapseOnSelect expand='md' className='shadow-sm bg-white'>
       <Container className={styles.container}>
@@ -19,13 +23,34 @@ export default function Header() {
               <Link href='/'>
                 <a>Home</a>
               </Link>
-              <Link href='/account/register'>
-                <a>Sign Up</a>
+              <Link href='/jobs'>
+                <a>Jobs</a>
               </Link>
-              <Link href='/account/login'>
-                <a>Login</a>
-              </Link>
-              <Button className={styles.danger}>Post Job</Button>
+
+              {user ? (
+                // If logged in
+                <>
+                  <Link href='#'>
+                    <a>Post Job</a>
+                  </Link>
+                  <div className={styles.dg}>
+                    <Link href='#' onClick={() => logout()}>
+                      <a>Logout</a>
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                // if not logged in
+                <>
+                  {/* <Link href='/account/register'>
+                    <a>Sign Up</a>
+                  </Link> */}
+
+                  <Link href='/account/login'>
+                    <a>Login</a>
+                  </Link>
+                </>
+              )}
             </Nav>
           </Nav>
         </Navbar.Collapse>
