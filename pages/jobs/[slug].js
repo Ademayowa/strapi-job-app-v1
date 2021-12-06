@@ -9,14 +9,37 @@ import {
   Button,
 } from 'react-bootstrap';
 import { BiChevronsRight } from 'react-icons/bs';
+import { FaPencilAlt, FaTimes } from 'react-icons/fa';
+import Link from 'next/link';
 import { API_URL } from '@/config/index';
 import Layout from '@/components/Layout';
 import BreadCrumb from './breadCrumb';
 import JobInfo from './jobInfo';
+import { ToastContainer, toast } from 'react-toastify';
+import { useRouter } from 'next/router';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from '@/styles/SingleJobPage.module.css';
 
 export default function SingleJobPage({ jb }) {
+  const router = useRouter();
+
   const { role, type, description, skills, company, salary } = jb;
+
+  const deleteJob = async (e) => {
+    if (confirm('Are you sure')) {
+      const res = await fetch(`${API_URL}/jobs/${jb.id}`, {
+        method: 'DELETE',
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.message);
+      } else {
+        router.push('/jobs');
+      }
+    }
+  };
 
   return (
     <Layout title={jb.role}>
@@ -24,6 +47,19 @@ export default function SingleJobPage({ jb }) {
       <Container className={styles.singleJob}>
         <Row>
           <JobInfo />
+          <ToastContainer />
+
+          <div className='d-flex'>
+            <Link href={`/jobs/edit/${jb.id}`}>
+              <a>
+                <FaPencilAlt /> Edit Job
+              </a>
+            </Link>
+
+            <a href='#' onClick={deleteJob}>
+              <FaTimes /> Delete Job
+            </a>
+          </div>
 
           <h3 className='fs-1 fw-bold'>{role}</h3>
           <h4 className='mt-3'>{type}</h4>

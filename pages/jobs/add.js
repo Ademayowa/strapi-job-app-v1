@@ -18,7 +18,6 @@ export default function AddJobPage() {
     time: '',
     company: '',
     description: '',
-    image: '',
     skills: '',
   });
 
@@ -27,9 +26,33 @@ export default function AddJobPage() {
     setValues({ ...values, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(values);
+
+    // Validation
+    const hasEmptyFields = Object.values(values).some(
+      (element) => element === ''
+    );
+
+    if (hasEmptyFields) {
+      toast.error('Please fill all fields');
+    }
+
+    const res = await fetch(`${API_URL}/jobs`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    });
+
+    // if error from the server
+    if (!res.ok) {
+      toast.error('Something went wrong!!');
+    } else {
+      const job = await res.json();
+      router.push(`/jobs/${job.slug}`);
+    }
   };
 
   const router = useRouter();
@@ -51,7 +74,6 @@ export default function AddJobPage() {
                   name='role'
                   value={values.role}
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
 
@@ -67,7 +89,6 @@ export default function AddJobPage() {
                   placeholder='Enter location'
                   value={values.location}
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
             </Row>
@@ -81,7 +102,6 @@ export default function AddJobPage() {
                   placeholder='Enter salary'
                   value={values.salary}
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
 
@@ -93,7 +113,6 @@ export default function AddJobPage() {
                   placeholder='Enter job type'
                   value={values.type}
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
             </Row>
@@ -107,7 +126,6 @@ export default function AddJobPage() {
                   placeholder='Enter date'
                   value={values.date}
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
 
@@ -119,7 +137,6 @@ export default function AddJobPage() {
                   placeholder='Enter time'
                   value={values.time}
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
             </Row>
@@ -132,9 +149,9 @@ export default function AddJobPage() {
                 placeholder='Enter skills'
                 value={values.skills}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
+            {/* Image upload here */}
 
             <Form.Group className='mb-3 fw-bold' controlId='company'>
               <Form.Label>Company</Form.Label>
@@ -146,7 +163,6 @@ export default function AddJobPage() {
                 placeholder='Enter info about the company'
                 value={values.company}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
 
@@ -160,7 +176,6 @@ export default function AddJobPage() {
                 placeholder='Enter info about the description'
                 value={values.description}
                 onChange={handleInputChange}
-                required
               />
             </Form.Group>
 
