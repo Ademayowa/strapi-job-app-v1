@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+import Image from 'next/image';
 import moment from 'moment';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,6 +9,7 @@ import Layout from '@/components/Layout';
 import { API_URL } from '@/config/index';
 import Link from 'next/link';
 import styles from '@/styles/AddForm.module.css';
+import Modal from '@/components/Modal';
 
 export default function EditJobPage({ job }) {
   const [values, setValues] = useState({
@@ -21,6 +23,14 @@ export default function EditJobPage({ job }) {
     description: job.description,
     skills: job.skills,
   });
+
+  // Check to see if there is an image
+  const [imagePreview, setImagePreview] = useState(
+    job.image ? job.image.url : null
+  );
+
+  // Modal
+  const [showModal, setShowModal] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -152,6 +162,7 @@ export default function EditJobPage({ job }) {
                 onChange={handleInputChange}
               />
             </Form.Group>
+
             {/* Image upload here */}
 
             <Form.Group className='mb-3 fw-bold' controlId='company'>
@@ -186,7 +197,30 @@ export default function EditJobPage({ job }) {
               </Button>
             </div>
           </Form>
+
+          <h4 className='mt-4'>Upload Image</h4>
+          {imagePreview ? (
+            <Image src={imagePreview} width={50} height={50} />
+          ) : (
+            <div>
+              <p>No image uploaded</p>
+            </div>
+          )}
+
+          <div>
+            <Button
+              onClick={() => setShowModal(true)}
+              type='submit'
+              variant='danger'
+            >
+              Upload
+            </Button>
+          </div>
         </div>
+
+        <Modal show={showModal} onClose={() => setShowModal(false)}>
+          Image upload
+        </Modal>
       </Container>
     </Layout>
   );
