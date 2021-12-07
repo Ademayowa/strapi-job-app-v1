@@ -172,8 +172,6 @@ export default function EditJobPage({ job }) {
               />
             </Form.Group>
 
-            {/* Image upload here */}
-
             <Form.Group className='mb-3 fw-bold' controlId='company'>
               <Form.Label>Company</Form.Label>
               <Form.Control
