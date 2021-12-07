@@ -10,6 +10,7 @@ import { API_URL } from '@/config/index';
 import Link from 'next/link';
 import styles from '@/styles/AddForm.module.css';
 import Modal from '@/components/Modal';
+import ImageUpload from '@/components/ImageUpload';
 
 export default function EditJobPage({ job }) {
   const [values, setValues] = useState({
@@ -67,6 +68,14 @@ export default function EditJobPage({ job }) {
   };
 
   const router = useRouter();
+
+  const imageUploaded = async (e) => {
+    // get the latest image
+    const res = await fetch(`${API_URL}/jobs/${job.id}`);
+    const data = await res.json();
+    setImagePreview(data.image.url);
+    setShowModal(false);
+  };
 
   return (
     <Layout title='Edit Job'>
@@ -219,7 +228,7 @@ export default function EditJobPage({ job }) {
         </div>
 
         <Modal show={showModal} onClose={() => setShowModal(false)}>
-          Image upload
+          <ImageUpload jbId={job.id} imageUploaded={imageUploaded} />
         </Modal>
       </Container>
     </Layout>
