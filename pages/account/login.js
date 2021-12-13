@@ -1,16 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Group, Button, Label, Control, Form } from 'react-bootstrap';
 import Link from 'next/link';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Layout from '@/components/Layout';
 import FormContainer from '@/components/FormContainer';
+import AuthContext from '@/context/AuthContext';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const { login, error } = useContext(AuthContext);
+
+  useEffect(() => error && toast.error(error));
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, password });
+    login({ email, password });
   };
 
   return (
